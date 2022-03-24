@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\VisiMisiModel;
-use App\Models\KurikulumModel;
 use App\Models\IdentitasWebModel;
+use Illuminate\Http\Request;
 
-class LandingController extends Controller
+class IdentitasWebController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,7 @@ class LandingController extends Controller
     public function index()
     {
         $identitas_web = IdentitasWebModel::limit(1)->first();
-
-        return view('pages.landing.index', array('identitas_web' => $identitas_web));
+        return view('pages.dashboard.identitas_web.index', array("identitas_web" => $identitas_web));
     }
 
     /**
@@ -73,7 +70,18 @@ class LandingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return abort(404);
+        $identitas_web = IdentitasWebModel::findOrFail($id);
+        
+        $identitas_web->alamat          = $request->get('alamat');
+        $identitas_web->no_telpon       = $request->get('no_telpon');
+        $identitas_web->email           = $request->get('email');
+        $identitas_web->path_video      = $request->get('path_video');
+        $identitas_web->deskripsi_video = $request->get('deskripsi_video');
+
+        $identitas_web->save();
+
+        toast()->success('Update data berhasil.');
+        return back();
     }
 
     /**
@@ -85,47 +93,5 @@ class LandingController extends Controller
     public function destroy($id)
     {
         return abort(404);
-    }
-
-    public function visi_misi()
-    {
-        $visi = VisiMisiModel::where('jenis', '1')->first();
-        $misi = VisiMisiModel::where('jenis', '0')->get();
-        $identitas_web = IdentitasWebModel::limit(1)->first();
-
-        return view('pages.landing.visi_misi', compact('visi', 'misi', 'identitas_web'));
-    }
-
-    public function kurikulum()
-    {
-        $kurikulum = KurikulumModel::get();
-        $identitas_web = IdentitasWebModel::limit(1)->first();
-        
-        return view('pages.landing.kurikulum', compact('kurikulum', 'identitas_web'));
-    }
-
-    public function prestasi()
-    {
-        return view('pages.landing.kurikulum');
-    }
-
-    public function ekstrakurikuler()
-    {
-        return view('pages.landing.kurikulum');
-    }
-
-    public function organisasi()
-    {
-        return view('pages.landing.kurikulum');
-    }
-
-    public function daftar()
-    {
-        return view('pages.landing.daftar');
-    }
-
-    public function store_daftar()
-    {
-        // 
     }
 }

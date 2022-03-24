@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\KurikulumController;
+use App\Http\Controllers\IdentitasWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ function(){
     Route::resource('visi_misi', VisiMisiController::class);
     // kurikulum
     Route::resource('kurikulum', KurikulumController::class);
+    // identitas web
+    Route::resource('identitas_web', IdentitasWebController::class);
 });
 
 // Route::get('/dashboard', function () {

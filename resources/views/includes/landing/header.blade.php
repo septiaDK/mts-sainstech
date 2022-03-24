@@ -3,13 +3,13 @@
         <div class="flex-1 flex-col">
         </div>
         <div class="flex-2 flex-col ml-4">
-            <i class="fa-solid fa-location-dot"></i> Desa Maribaya, Kec. Karanganyar, Kabupaten Purbalingga, 53354
+            <i class="fa-solid fa-location-dot"></i> {{ $identitas_web->alamat ?? '' }}
         </div>
         <div class="flex-2 flex-col ml-4">
-            <i class="fa-solid fa-phone"></i> 0857-9937-9336
+            <i class="fa-solid fa-phone"></i> {{ $identitas_web->no_telpon ?? '' }}
         </div>
         <div class="flex-2 flex-col ml-4">
-            <i class="fa-solid fa-square-envelope"></i> Mtssainstekalquran@gmail.com
+            <i class="fa-solid fa-square-envelope"></i> {{ $identitas_web->email ?? '' }}
         </div>
     </div>
 </div>

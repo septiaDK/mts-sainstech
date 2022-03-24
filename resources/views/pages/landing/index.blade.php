@@ -94,7 +94,7 @@
         <div class="py-10 lg:py-24 flex lg:flex-row flex-col items-center cta-bg">
             <!-- Left Column -->
             <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12">
-                <a href="{{ url('https://www.youtube.com/watch?v=dQw4w9WgXcQ') }}" data-lity>
+                <a href="{{ url($identitas_web->path_video) }}" data-lity>
                     <img id="hero" src="{{ asset('/assets/images/video-placeholder.png') }}" alt=""
                         class="p-5" />
                 </a>
@@ -105,7 +105,7 @@
                     Video Profil
                 </h2>
                 <p class="text-lg leading-relaxed text-serv-text font-light mb-10 lg:mb-18">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus perspiciatis ex enim aspernatur accusantium voluptate sapiente totam temporibus optio repellendus! Autem minima nesciunt delectus suscipit ipsam, recusandae incidunt animi quisquam?
+                    {{ $identitas_web->deskripsi_video ?? '' }}
                 </p>
             </div>
         </div>
