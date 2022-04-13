@@ -19,10 +19,11 @@
             <div class="grid gap-5 md:grid-cols-12">
                 <main class="col-span-12 p-4 md:pt-0">
                     <div class="px-2 py-2 mt-2 bg-white rounded-xl">
-                        <form action="{{ route('admin.identitas_web.update', [$identitas_web->id]) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
 
-                            @method('PUT')
+                            @if ($jenis == 'Update')
+                                @method('PUT')
+                            @endif
                             @csrf
 
                             <div class="">
@@ -69,20 +70,23 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="path_video"
-                                                class="block mb-3 font-medium text-gray-700 text-md">URL Video Profil (Embed Youtube)</label>
-                                            <input placeholder="" type="text" name="path_video" id="path_video" autocomplete="path_video"
+                                            <label for="path_video" class="block mb-3 font-medium text-gray-700 text-md">URL
+                                                Video Profil (Embed Youtube)</label>
+                                            <input placeholder="" type="text" name="path_video" id="path_video"
+                                                autocomplete="path_video"
                                                 class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                 value="{{ $identitas_web->path_video ?? '' }}" required>
 
                                             @if ($errors->has('path_video'))
-                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('path_video') }}</p>
+                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('path_video') }}
+                                                </p>
                                             @endif
                                         </div>
 
                                         <div class="col-span-6">
                                             <label for="deskripsi_video"
-                                                class="block mb-3 font-medium text-gray-700 text-md">Deskripsi Video Profil</label>
+                                                class="block mb-3 font-medium text-gray-700 text-md">Deskripsi Video
+                                                Profil</label>
                                             <textarea placeholder="" type="text" name="deskripsi_video" id="deskripsi_video" autocomplete="deskripsi_video"
                                                 class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                 rows="4">{{ $identitas_web->deskripsi_video ?? '' }}</textarea>
@@ -96,11 +100,6 @@
                                 </div>
 
                                 <div class="px-4 py-3 text-right sm:px-6">
-                                    <a href="{{ route('admin.dashboard.index') }}" type="button"
-                                        class="inline-flex justify-center px-4 py-2 mr-4 text-sm font-medium text-gray-700 bg-white border border-gray-600 rounded-lg shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
-                                        onclick="return confirm('Apakah Anda yakin kembali?, Data tidak akan tersimpan.')">
-                                        Cancel
-                                    </a>
                                     <button type="submit"
                                         class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                                         onclick="return confirm('Apakah anda yakin akan menyimpan data?')">

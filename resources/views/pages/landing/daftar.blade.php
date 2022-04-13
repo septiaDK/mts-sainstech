@@ -18,7 +18,7 @@
                         <main class="col-span-12 p-4 md:pt-0">
                             <div class="px-2 py-2 mt-2 bg-white rounded-xl">
 
-                                <form action="{{ route('landing.store_daftar') }}" method="POST"
+                                <form action="{{ route('landing.store_siswa_baru') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
 
@@ -27,108 +27,108 @@
                                             <div class="grid grid-cols-6 gap-6">
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="name"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Nama </label>
 
                                                     <input placeholder="Nama Calon Peserta Didik Baru?" type="text"
-                                                        name="title" id="title" autocomplete="title"
+                                                        name="name" id="name" autocomplete="name"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="nisn"
                                                         class="block mb-3 font-medium text-gray-700 text-md">NISN </label>
 
-                                                    <input placeholder="NISN Sesuai Ijazah?" type="text" name="title"
-                                                        id="title" autocomplete="title"
+                                                    <input placeholder="NISN Sesuai Ijazah?" type="text" name="nisn"
+                                                        id="nisn" autocomplete="nisn"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="nik"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Nomor Induk
                                                         Kependudukan (NIK)</label>
 
                                                     <input placeholder="NIK Calon Peserta Didik Baru?" type="text"
-                                                        name="title" id="title" autocomplete="title"
+                                                        name="nik" id="nik" autocomplete="nik"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="tempat_lahir"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Tempat
                                                         Lahir</label>
 
                                                     <input placeholder="Tempat Lahir Calon Peserta Didik Baru?" type="text"
-                                                        name="title" id="title" autocomplete="title"
+                                                        name="tempat_lahir" id="tempat_lahir" autocomplete="tempat_lahir"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="tanggal_lahir"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Tanggal
                                                         Lahir</label>
 
                                                     <input placeholder="Tanggal Lahir Calon Peserta Didik Baru?" type="date"
-                                                        name="title" id="title" autocomplete="title"
+                                                        name="tanggal_lahir" id="tanggal_lahir" autocomplete="tanggal_lahir"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="jenis_kelamin"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Jenis
                                                         Kelamin</label>
 
                                                     <div class="form-check">
                                                         <input
                                                             class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                            type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                            type="radio" name="jenis_kelamin" id="L" value="L" required>
                                                         <label class="form-check-label inline-block text-gray-800"
-                                                            for="flexRadioDefault1">
+                                                            for="L">
                                                             Laki - Laki
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input
                                                             class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                            type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                            type="radio" name="jenis_kelamin" id="P" value="P" required>
                                                         <label class="form-check-label inline-block text-gray-800"
-                                                            for="flexRadioDefault2">
+                                                            for="P">
                                                             Perempuan
                                                         </label>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="note"
+                                                    <label for="alamat_lengkap"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Alamat
                                                         Lengkap</label>
-                                                    <textarea placeholder="Alamat Lengkap Calon Peserta Didik Baru?" type="text" name="note" id="note" autocomplete="note"
+                                                    <textarea placeholder="Alamat Lengkap Calon Peserta Didik Baru?" type="text" name="alamat_lengkap" id="alamat_lengkap" autocomplete="alamat_lengkap"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         rows="4" required></textarea>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="no_telpon"
                                                         class="block mb-3 font-medium text-gray-700 text-md">No Telphone / Whatsapp</label>
 
                                                     <input placeholder="No Telphone / Whatsapp Yang Bisa Dihubungi?" type="text"
-                                                        name="title" id="title" autocomplete="title"
+                                                        name="no_telpon" id="no_telpon" autocomplete="no_telpon"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
 
                                                 <div class="col-span-6">
-                                                    <label for="title"
+                                                    <label for="photo"
                                                         class="block mb-3 font-medium text-gray-700 text-md">Upload Foto Calon Peserta Didik</label>
 
                                                     <input type="file"
-                                                        name="title" id="title" autocomplete="title"
+                                                        name="photo" id="photo" autocomplete="photo"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
                                                 </div>
@@ -138,7 +138,7 @@
                                         <div class="px-4 py-3 text-right sm:px-6">
                                             <button type="submit"
                                                 class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                                                onclick="return confirm('Are you sure want to submit this data?')">
+                                                onclick="return confirm('Apakah anda yakin akan menyimpan data?')">
                                                 Simpan
                                             </button>
 

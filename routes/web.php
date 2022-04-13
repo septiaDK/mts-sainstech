@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\KurikulumController;
@@ -24,7 +25,8 @@ Route::get('prestasi', [LandingController::class, 'prestasi'])->name('landing.pr
 Route::get('ekstrakurikuler', [LandingController::class, 'ekstrakurikuler'])->name('landing.ekstrakurikuler');
 Route::get('organisasi', [LandingController::class, 'organisasi'])->name('landing.organisasi');
 Route::get('daftar', [LandingController::class, 'daftar'])->name('landing.daftar');
-Route::post('store_daftar', [LandingController::class, 'store_daftar'])->name('landing.store_daftar');
+Route::post('store_daftar', [LandingController::class, 'store_daftar'])->name('landing.store_siswa_baru');
+Route::get('success_daftar_siswa', [LandingController::class, 'success_daftar_siswa'])->name('landing.success_daftar_siswa');
 Route::resource('/', LandingController::class);
 
 
@@ -38,6 +40,8 @@ function(){
     Route::resource('kurikulum', KurikulumController::class);
     // identitas web
     Route::resource('identitas_web', IdentitasWebController::class);
+    // siswa
+    Route::resource('siswa', SiswaController::class);
 });
 
 // Route::get('/dashboard', function () {

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\VisiMisiModel;
 use App\Models\KurikulumModel;
 use App\Models\IdentitasWebModel;
+use App\Models\SiswaModel;
+
+use Illuminate\Support\Facades\Storage;
+use File;
 
 class LandingController extends Controller
 {
@@ -119,13 +123,40 @@ class LandingController extends Controller
         return view('pages.landing.kurikulum');
     }
 
+    // function daftar siswa baru
     public function daftar()
     {
-        return view('pages.landing.daftar');
+        $identitas_web = IdentitasWebModel::limit(1)->first();
+
+        return view('pages.landing.daftar', compact('identitas_web'));
     }
 
-    public function store_daftar()
+    // function simpan daftar siswa baru
+    public function store_daftar(Request $request)
     {
-        // 
+        $new_siswa = new SiswaModel;
+        $new_siswa->name          = strtoupper($request->get('name'));
+        $new_siswa->nisn          = $request->get('nisn');
+        $new_siswa->nik           = $request->get('nik');
+        $new_siswa->tempat_lahir  = strtoupper($request->get('tempat_lahir'));
+        $new_siswa->tanggal_lahir = date('Y-m-d', strtotime($request->get('tanggal_lahir')));
+        $new_siswa->jenis_kelamin = $request->get('jenis_kelamin');
+        $new_siswa->alamat        = strtoupper($request->get('alamat_lengkap'));
+        $new_siswa->no_telpon     = $request->get('no_telpon');
+
+        $photo = $request->file('photo');
+        if(isset($photo)){
+            $new_siswa->photo = $request->file('photo')->store('assets/photo_siswa', 'public');
+        }
+
+        $new_siswa->save();
+
+        return redirect()->route('landing.success_daftar_siswa');
+    }
+
+    // notifikasi berhasil daftar siswa
+    public function success_daftar_siswa()
+    {
+        return view('pages.landing.success_daftar');
     }
 }

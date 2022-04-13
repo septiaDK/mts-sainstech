@@ -1,0 +1,30 @@
+1. urutan program unggulan
+2. foto prestasi
+3. tenaga pendidik
+
+formulir pdb
+tambahan :
+- Nama Siswa
+- NISN
+- NIK Calon Peserta Didik Baru
+- Tempat Lahir Calon Peserta Didik Baru
+- Tanggal Lahir Siswa
+- Jenis Kelamin
+- Alamat 
+- Asal Sekolah / Madrasah
+- Nomor Telephone / Whatsapp Yang Bisa Dihubungi.
+- Nama Ayah
+- Pekerjaan Ayah
+- Pendidikan Terakhir Ayah
+- Nama Ibu
+- Pekerjaan Ibu
+- Pendidikan Terakhir Ibu
+- Rata - Rata Penghasilan Orang Tua 
+	0 Sampai 500.000
+	500.000 Sampai 1.000.000
+	1.000.000 Sampai 2.000.000
+	Di Atas 2.000.000
+- Status Orang Tua Calon Peserta Didik Baru
+- Nama Wali  (Bisa Di Isi Jika (Calon Peserta Didik Baru) Ikut Dengan Wali/ Saudara)
+- Pekerjaan Wali  (Bisa Di Isi Jika (Calon Peserta Didik Baru) Ikut Dengan Wali/ Saudara)
+- Hubungan Wali Dengan Calon Peserta Didik Baru  (Bisa Di Isi Jika (Calon Peserta Didik Baru) Ikut Dengan Wali/ Saudara)

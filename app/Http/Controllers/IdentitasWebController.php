@@ -15,7 +15,15 @@ class IdentitasWebController extends Controller
     public function index()
     {
         $identitas_web = IdentitasWebModel::limit(1)->first();
-        return view('pages.dashboard.identitas_web.index', array("identitas_web" => $identitas_web));
+        if(isset($identitas_web)){
+            $action = route('admin.identitas_web.update', [$identitas_web->id]);
+            $jenis  = 'Update';
+        } else {
+            $action = route('admin.identitas_web.store');
+            $jenis  = 'Insert';
+        }
+
+        return view('pages.dashboard.identitas_web.index', array("identitas_web" => $identitas_web, "action" => $action, "jenis" => $jenis));
     }
 
     /**
@@ -36,7 +44,18 @@ class IdentitasWebController extends Controller
      */
     public function store(Request $request)
     {
-        return abort(404);
+        $new_identitas_web = new IdentitasWebModel;
+
+        $new_identitas_web->alamat          = $request->get('alamat');
+        $new_identitas_web->no_telpon       = $request->get('no_telpon');
+        $new_identitas_web->email           = $request->get('email');
+        $new_identitas_web->path_video      = $request->get('path_video');
+        $new_identitas_web->deskripsi_video = $request->get('deskripsi_video');
+
+        $new_identitas_web->save();
+
+        toast()->success('Simpan data berhasil.');
+        return back();
     }
 
     /**
