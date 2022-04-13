@@ -7,7 +7,7 @@ use App\Models\VisiMisiModel;
 use App\Models\KurikulumModel;
 use App\Models\IdentitasWebModel;
 use App\Models\SiswaModel;
-
+use App\Models\TenagaPendidikModel;
 use Illuminate\Support\Facades\Storage;
 use File;
 
@@ -21,8 +21,9 @@ class LandingController extends Controller
     public function index()
     {
         $identitas_web = IdentitasWebModel::limit(1)->first();
+        $tenaga_pendidik = TenagaPendidikModel::get();
 
-        return view('pages.landing.index', array('identitas_web' => $identitas_web));
+        return view('pages.landing.index', compact('identitas_web', 'tenaga_pendidik'));
     }
 
     /**

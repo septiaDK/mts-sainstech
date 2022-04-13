@@ -152,7 +152,7 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -169,31 +169,24 @@
                 </div>
                 <div class="flex overflow-x-scroll pb-10 hide-scroll-bar dragscroll -mx-3">
                     <div class="flex flex-nowrap">
-                        <div class="px-3">
-                            <div class="w-64 h-auto overflow-hidden md:p-5 p-4 rounded-2xl inline-block">
-                                <!--image-->
-                                <img class="rounded-2xl w-full" src="{{ asset('assets/contoh.jpeg') }}"
-                                    alt="placeholder" />
+                        @forelse ($tenaga_pendidik as $item_pendidik)
+                            <div class="px-3">
+                                <div class="w-64 h-auto overflow-hidden md:p-5 p-4 rounded-2xl inline-block">
+                                    <!--image-->
+                                    <img class="rounded-2xl w-full" src="{{ url(Storage::url($item_pendidik->url_path))  }}"
+                                        alt="placeholder" />
 
-                                <!--name-->
-                                <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
-                                    Mr. X, S.kom.
-                                </p>
+                                    <!--name-->
+                                    <p
+                                        class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
+                                        {{ $item_pendidik->name ?? '' }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="px-3">
-                            <div class="w-64 h-auto overflow-hidden md:p-5 p-4 rounded-2xl inline-block">
-                                <!--image-->
-                                <img class="rounded-2xl w-full" src="{{ asset('assets/contoh2.jpeg') }}"
-                                    alt="placeholder" />
+                        @empty
+                        {{-- no data --}}
+                        @endforelse
 
-                                <!--name-->
-                                <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
-                                    Mrs. Y, S.kom.
-                                </p>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
             </div>

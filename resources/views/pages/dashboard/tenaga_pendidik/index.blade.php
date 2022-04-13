@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kurikulum')
+@section('title', 'Tenaga Pendidik')
 
 @section('content')
     <main class="h-full overflow-y-auto">
@@ -8,14 +8,14 @@
             <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-12">
                 <div class="col-span-8">
                     <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
-                        Kurikulum
+                        {{ $jmlh_tenaga_pendidik ?? '' }} Tenaga Pendidik
                     </h2>
                 </div>
                 <div class="col-span-4 lg:text-right">
                     <div class="relative mt-0 md:mt-6">
-                        <a href="{{ route('admin.kurikulum.create') }}"
+                        <a href="{{ route('admin.tenaga_pendidik.create') }}"
                             class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-serv-button">
-                            + Tambah Kurikulum
+                            + Tambah Tenaga Pendidik
                         </a>
                     </div>
                 </div>
@@ -29,44 +29,44 @@
                         <table class="w-full" aria-label="Table">
                             <thead>
                                 <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
-                                    <th class="py-4 text-center" scope="" rowspan="2">No.</th>
-                                    <th class="py-4 text-center" scope="" rowspan="2">Mata Pelajaran</th>
-                                    <th class="py-4 text-center" scope="" colspan="3">Alokasi Waktu Per Minggu</th>
-                                    <th class="py-4 text-center" scope="" rowspan="2">Action</th>
-                                </tr>
-                                <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
-                                    <th class="py-4 text-center" scope="">VII</th>
-                                    <th class="py-4 text-center" scope="">VIII</th>
-                                    <th class="py-4 text-center" scope="">IX</th>
+                                    <th class="py-4 text-center" scope="">Nama</th>
+                                    <th class="py-4 text-center" scope="">Photo</th>
+                                    <th class="py-4 text-center" scope="">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white">
-                                @forelse ($kurikulum as $key => $item)
-                                    <tr class="text-gray-700 border-b">
-                                        <td class="px-1 py-5 text-sm text-center">
-                                            {{ ++$key.'. ' }}
-                                        </td>
+                                @forelse ($tenaga_pendidik as $item)
                                         <td class="px-1 py-5 text-sm">
                                             {{ $item->name ?? '' }}
                                         </td>
-                                        <td class="px-1 py-5 text-sm text-center">
-                                            {{ $item->vii ?? '' }}
-                                        </td>
-                                        <td class="px-1 py-5 text-sm text-center">
-                                            {{ $item->viii ?? '' }}
-                                        </td>
-                                        <td class="px-1 py-5 text-sm text-center">
-                                            {{ $item->ix ?? '' }}
+                                        <td class="w-2/6 px-1 py-5">
+                                            <div class="flex items-center text-sm">
+                                                <div class="relative w-20 h-20 mr-3 rounded-full md:block">
+                                                    @if (isset($item->url_path) != null)
+                                                        <img class="object-cover w-full h-full rounded"
+                                                            src="{{ url(Storage::url($item->url_path)) }}"
+                                                            alt="thumbnail" loading="lazy">
+                                                    @else
+                                                        <svg class="object-cover w-full h-full rounded text-gray-300"
+                                                            fill="currentColor" viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                        </svg>
+                                                    @endif
+                                                    <div class="absolute inset-0 rounded-full shadow-inner"
+                                                        aria-hidden="true"></div>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td class="w-2/6 px-1 py-5 text-sm text-center">
-                                            <a href="{{ route('admin.kurikulum.edit', $item->id) }}"
+                                            <a href="{{ route('admin.tenaga_pendidik.edit', $item->id) }}"
                                                 class="px-4 py-2 mt-1 mr-2 text-center text-white rounded-xl bg-serv-button">Edit</a>
 
-                                            <a href="{{ route('admin.kurikulum.destroy', $item->id) }}"
+                                            <a href="{{ route('admin.tenaga_pendidik.destroy', $item->id) }}"
                                                 class="px-4 py-2 mt-2 text-center text-white rounded-xl bg-red-400"
                                                 onclick="event.preventDefault(); document.getElementById('delete-form{{ $item->id }}').submit();">Delete</a>
 
-                                            <form action="{{ route('admin.kurikulum.destroy', $item->id) }}"
+                                            <form action="{{ route('admin.tenaga_pendidik.destroy', $item->id) }}"
                                                 id="delete-form{{ $item->id }}" method="POST" style="display: none;">
                                                 @csrf
                                                 @method("DELETE")
@@ -76,8 +76,8 @@
                                 @empty
                                     {{-- emppty --}}
                                     <tr>
-                                        <td colspan="6" class="text-center px-1 py-5 text-sm">NO DATA</td>
-                                    </tr> 
+                                        <td colspan="3" class="text-center px-1 py-5 text-sm">NO DATA</td>
+                                    </tr>
                                 @endforelse
                             </tbody>
                         </table>

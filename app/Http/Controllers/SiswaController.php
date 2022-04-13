@@ -120,8 +120,6 @@ class SiswaController extends Controller
 
         $siswa->delete();
 
-
-
         toast()->success('Delete data berhasil.');
         return redirect()->route('admin.siswa.index');
     }

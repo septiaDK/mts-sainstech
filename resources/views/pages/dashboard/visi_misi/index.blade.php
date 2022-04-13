@@ -56,7 +56,7 @@
                                                 class="px-4 py-2 mt-1 mr-2 text-center text-white rounded-xl bg-serv-button">Edit</a>
 
                                             <a href="{{ route('admin.visi_misi.destroy', $item->id) }}"
-                                                class="px-4 py-2 mt-2 text-center text-white rounded-xl bg-serv-email"
+                                                class="px-4 py-2 mt-2 text-center text-white rounded-xl bg-red-400"
                                                 onclick="event.preventDefault(); document.getElementById('delete-form{{ $item->id }}').submit();">Delete</a>
 
                                             <form action="{{ route('admin.visi_misi.destroy', $item->id) }}"
