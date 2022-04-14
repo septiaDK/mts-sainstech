@@ -7,6 +7,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\IdentitasWebController;
+use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\TenagaPendidikController;
 
 /*
@@ -45,6 +46,8 @@ function(){
     Route::resource('siswa', SiswaController::class);
     // tenaga pendidik
     Route::resource('tenaga_pendidik', TenagaPendidikController::class);
+    // prestasi
+    Route::resource('prestasi', PrestasiController::class);
 });
 
 // Route::get('/dashboard', function () {

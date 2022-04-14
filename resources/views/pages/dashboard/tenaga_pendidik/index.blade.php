@@ -15,7 +15,7 @@
                     <div class="relative mt-0 md:mt-6">
                         <a href="{{ route('admin.tenaga_pendidik.create') }}"
                             class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-serv-button">
-                            + Tambah Tenaga Pendidik
+                            + Tambah
                         </a>
                     </div>
                 </div>

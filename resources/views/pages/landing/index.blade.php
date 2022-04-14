@@ -32,7 +32,7 @@
                 <!-- Right Column -->
                 <div class="w-full lg:w-1/2 text-center lg:justify-start justify-center flex pr-0">
                     <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-75"
-                        src="{{ asset('/assets/hero-image.png') }}" alt="" />
+                        src="{{ asset('/assets/header-image.png') }}" alt="" />
                 </div>
             </div>
         </div>
@@ -104,55 +104,23 @@
                 </div>
                 <div class="flex overflow-x-scroll pb-10 hide-scroll-bar dragscroll -mx-3">
                     <div class="flex flex-nowrap">
-                        <div class="px-3">
-                            <div class="w-96 h-auto overflow-hidden md:p-5 p-4 bg-white rounded-2xl inline-block">
-                                <!--image-->
-                                <img class="rounded-2xl w-full" src="{{ asset('assets/contoh2.JPG') }}"
-                                    alt="placeholder" />
+                        @forelse ($prestasi as $item_prestasi)
+                            <div class="px-3">
+                                <div class="w-96 h-auto overflow-hidden md:p-5 p-4 bg-white rounded-2xl inline-block">
+                                    <!--image-->
+                                    <img class="rounded-2xl w-full" src="{{ url(Storage::url($item_prestasi->photo)) }}"
+                                        alt="placeholder" />
 
-                                <!--deskripsi-->
-                                <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
-                                    Lorem ipsum dolor sit amet.
-                                </p>
+                                    <!--deskripsi-->
+                                    <p
+                                        class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
+                                        {{ $item_prestasi->judul }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="px-3">
-                            <div class="w-96 h-auto overflow-hidden md:p-5 p-4 bg-white rounded-2xl inline-block">
-                                <!--image-->
-                                <img class="rounded-2xl w-full" src="{{ asset('assets/contoh2.JPG') }}"
-                                    alt="placeholder" />
-
-                                <!--deskripsi-->
-                                <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
-                                    Lorem ipsum dolor sit amet.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-3">
-                            <div class="w-96 h-auto overflow-hidden md:p-5 p-4 bg-white rounded-2xl inline-block">
-                                <!--image-->
-                                <img class="rounded-2xl w-full" src="{{ asset('assets/contoh2.JPG') }}"
-                                    alt="placeholder" />
-
-                                <!--deskripsi-->
-                                <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
-                                    Lorem ipsum dolor sit amet.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="px-3">
-                            <div class="w-96 h-auto overflow-hidden md:p-5 p-4 bg-white rounded-2xl inline-block">
-                                <!--image-->
-                                <img class="rounded-2xl w-full" src="{{ asset('assets/contoh2.JPG') }}"
-                                    alt="placeholder" />
-
-                                <!--deskripsi-->
-                                <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center mt-4">
-                                    Lorem ipsum dolor sit amet.
-                                </p>
-                            </div>
-                        </div>
-
+                        @empty
+                        {{-- no data --}}
+                        @endforelse
                     </div>
                 </div>
             </div>
@@ -173,8 +141,8 @@
                             <div class="px-3">
                                 <div class="w-64 h-auto overflow-hidden md:p-5 p-4 rounded-2xl inline-block">
                                     <!--image-->
-                                    <img class="rounded-2xl w-full" src="{{ url(Storage::url($item_pendidik->url_path))  }}"
-                                        alt="placeholder" />
+                                    <img class="rounded-2xl w-full"
+                                        src="{{ url(Storage::url($item_pendidik->url_path)) }}" alt="placeholder" />
 
                                     <!--name-->
                                     <p
@@ -184,7 +152,7 @@
                                 </div>
                             </div>
                         @empty
-                        {{-- no data --}}
+                            {{-- no data --}}
                         @endforelse
 
                     </div>

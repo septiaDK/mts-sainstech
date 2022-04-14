@@ -60,7 +60,7 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="jenis"
+                                            <label for="foto"
                                                 class="block mb-3 font-medium text-gray-700 text-md">Foto</label>
                                             <img src="{{ url(Storage::url($tenaga_pendidik->url_path)) }}" alt="foto"
                                                 class="inline object-cover w-20 h-20 rounded" for="choose">

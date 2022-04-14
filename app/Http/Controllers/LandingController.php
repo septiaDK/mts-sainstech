@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\VisiMisiModel;
 use App\Models\KurikulumModel;
 use App\Models\IdentitasWebModel;
+use App\Models\PrestasiModel;
 use App\Models\SiswaModel;
 use App\Models\TenagaPendidikModel;
 use Illuminate\Support\Facades\Storage;
@@ -22,8 +23,9 @@ class LandingController extends Controller
     {
         $identitas_web = IdentitasWebModel::limit(1)->first();
         $tenaga_pendidik = TenagaPendidikModel::get();
+        $prestasi = PrestasiModel::get();
 
-        return view('pages.landing.index', compact('identitas_web', 'tenaga_pendidik'));
+        return view('pages.landing.index', compact('identitas_web', 'tenaga_pendidik', 'prestasi'));
     }
 
     /**

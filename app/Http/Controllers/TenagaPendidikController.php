@@ -61,7 +61,7 @@ class TenagaPendidikController extends Controller
      */
     public function show($id)
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -97,7 +97,7 @@ class TenagaPendidikController extends Controller
 
         $tenaga_pendidik->save();
 
-        toast()->success("Tambah data berhasil");
+        toast()->success("Update data berhasil");
         return redirect()->route('admin.tenaga_pendidik.index');
     }
 
