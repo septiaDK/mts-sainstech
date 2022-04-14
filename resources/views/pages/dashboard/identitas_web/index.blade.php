@@ -70,6 +70,45 @@
                                         </div>
 
                                         <div class="col-span-6">
+                                            <label for="link_instagram" class="block mb-3 font-medium text-gray-700 text-md">URL Instagram</label>
+                                            <input placeholder="" type="text" name="link_instagram" id="link_instagram"
+                                                autocomplete="link_instagram"
+                                                class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                value="{{ $identitas_web->link_instagram ?? '' }}">
+
+                                            @if ($errors->has('link_instagram'))
+                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('link_instagram') }}
+                                                </p>
+                                            @endif
+                                        </div>
+
+                                        <div class="col-span-6">
+                                            <label for="link_telegram" class="block mb-3 font-medium text-gray-700 text-md">URL Telegram</label>
+                                            <input placeholder="" type="text" name="link_telegram" id="link_telegram"
+                                                autocomplete="link_telegram"
+                                                class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                value="{{ $identitas_web->link_telegram ?? '' }}">
+
+                                            @if ($errors->has('link_telegram'))
+                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('link_telegram') }}
+                                                </p>
+                                            @endif
+                                        </div>
+
+                                        <div class="col-span-6">
+                                            <label for="link_facebook" class="block mb-3 font-medium text-gray-700 text-md">URL Facebook</label>
+                                            <input placeholder="" type="text" name="link_facebook" id="link_facebook"
+                                                autocomplete="link_facebook"
+                                                class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                value="{{ $identitas_web->link_facebook ?? '' }}">
+
+                                            @if ($errors->has('link_facebook'))
+                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('link_facebook') }}
+                                                </p>
+                                            @endif
+                                        </div>
+
+                                        <div class="col-span-6">
                                             <label for="path_video" class="block mb-3 font-medium text-gray-700 text-md">URL
                                                 Video Profil (Embed Youtube)</label>
                                             <input placeholder="" type="text" name="path_video" id="path_video"

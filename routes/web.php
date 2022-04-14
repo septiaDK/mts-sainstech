@@ -8,6 +8,7 @@ use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\KurikulumController;
 use App\Http\Controllers\IdentitasWebController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\ProgramUnggulanController;
 use App\Http\Controllers\TenagaPendidikController;
 
 /*
@@ -48,10 +49,12 @@ function(){
     Route::resource('tenaga_pendidik', TenagaPendidikController::class);
     // prestasi
     Route::resource('prestasi', PrestasiController::class);
+    // program unggulan
+    Route::resource('program_unggulan', ProgramUnggulanController::class);
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return redirect()->route('admin.dashboard.index');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

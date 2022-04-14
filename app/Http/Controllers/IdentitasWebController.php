@@ -23,7 +23,7 @@ class IdentitasWebController extends Controller
             $jenis  = 'Insert';
         }
 
-        return view('pages.dashboard.identitas_web.index', array("identitas_web" => $identitas_web, "action" => $action, "jenis" => $jenis));
+        return view('pages.dashboard.identitas_web.index', compact("identitas_web", "action", "jenis"));
     }
 
     /**
@@ -51,6 +51,9 @@ class IdentitasWebController extends Controller
         $new_identitas_web->email           = $request->get('email');
         $new_identitas_web->path_video      = $request->get('path_video');
         $new_identitas_web->deskripsi_video = $request->get('deskripsi_video');
+        $new_identitas_web->link_instagram  = $request->get('link_instagram');
+        $new_identitas_web->link_telegram   = $request->get('link_telegram');
+        $new_identitas_web->link_facebook   = $request->get('link_facebook');
 
         $new_identitas_web->save();
 
@@ -96,6 +99,9 @@ class IdentitasWebController extends Controller
         $identitas_web->email           = $request->get('email');
         $identitas_web->path_video      = $request->get('path_video');
         $identitas_web->deskripsi_video = $request->get('deskripsi_video');
+        $identitas_web->link_instagram  = $request->get('link_instagram');
+        $identitas_web->link_telegram   = $request->get('link_telegram');
+        $identitas_web->link_facebook   = $request->get('link_facebook');
 
         $identitas_web->save();
 

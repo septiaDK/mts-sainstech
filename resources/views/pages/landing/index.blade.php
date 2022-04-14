@@ -54,42 +54,19 @@
                 </div>
             </div>
             <div class="flex flex-wrap mt-12 justify-center ">
-                <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12 pt-5">
-                    <div class="w-80 h-auto md:p-5 p-4 bg-white rounded-2xl inline-block">
-                        <img src="{{ asset('/assets/logo.png') }}" alt="" class="w-24 h-24 mx-auto" />
-                        <!--Title-->
-                        <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center">
-                            Bagus
-                        </p>
+                @forelse ($program_unggulan as $item_program_unggulan)
+                    <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12 pt-5">
+                        <div class="w-80 h-auto md:p-5 p-4 bg-white rounded-2xl inline-block">
+                            <img src="{{ url(Storage::url($item_program_unggulan->logo)) }}" alt="" class="w-24 h-24 mx-auto" />
+                            <!--Title-->
+                            <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center">
+                                {{ $item_program_unggulan->judul ?? '' }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12 pt-5">
-                    <div class="w-80 h-auto md:p-5 p-4 bg-white rounded-2xl inline-block">
-                        <img src="{{ asset('/assets/logo.png') }}" alt="" class="w-24 h-24 mx-auto" />
-                        <!--Title-->
-                        <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center">
-                            Bagus
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12 pt-5">
-                    <div class="w-80 h-auto md:p-5 p-4 bg-white rounded-2xl inline-block">
-                        <img src="{{ asset('/assets/logo.png') }}" alt="" class="w-24 h-24 mx-auto" />
-                        <!--Title-->
-                        <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center">
-                            Bagus
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12 pt-5">
-                    <div class="w-80 h-auto md:p-5 p-4 bg-white rounded-2xl inline-block">
-                        <img src="{{ asset('/assets/logo.png') }}" alt="" class="w-24 h-24 mx-auto" />
-                        <!--Title-->
-                        <p class="text-lg leading-relaxed text-gray-500 font-light tracking-wide text-center">
-                            Bagus
-                        </p>
-                    </div>
-                </div>
+                @empty
+                    {{-- no data --}}
+                @endforelse
             </div>
         </div>
 
@@ -119,7 +96,7 @@
                                 </div>
                             </div>
                         @empty
-                        {{-- no data --}}
+                            {{-- no data --}}
                         @endforelse
                     </div>
                 </div>

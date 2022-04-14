@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Prestasi')
+@section('title', 'Edit Program Unggulan')
 
 @section('content')
     <main class="h-full overflow-y-auto">
@@ -8,7 +8,7 @@
             <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-12">
                 <div class="col-span-12">
                     <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
-                        Edit Prestasi
+                        Edit Program Unggulan
                     </h2>
                 </div>
             </div>
@@ -18,7 +18,7 @@
         <nav class="mx-10 mt-8 text-sm" aria-label="Breadcrumb">
             <ol class="inline-flex p-0 list-none">
                 <li class="flex items-center">
-                    <a href="{{ route('admin.prestasi.index') }}" class="text-gray-400">Prestasi</a>
+                    <a href="{{ route('admin.program_unggulan.index') }}" class="text-gray-400">Program Unggulan</a>
                     <svg class="w-3 h-3 mx-3 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512">
                         <path
@@ -26,7 +26,7 @@
                     </svg>
                 </li>
                 <li class="flex items-center">
-                    <p class="font-medium">Edit Prestasi</p>
+                    <p class="font-medium">Edit Program Unggulan</p>
                 </li>
             </ol>
         </nav>
@@ -36,7 +36,7 @@
                 <main class="col-span-12 p-4 md:pt-0">
                     <div class="px-2 py-2 mt-2 bg-white rounded-xl">
 
-                        <form action="{{ route('admin.prestasi.update', [$prestasi->id]) }}" method="POST"
+                        <form action="{{ route('admin.program_unggulan.update', [$program_unggulan->id]) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
@@ -52,7 +52,7 @@
                                             <input placeholder="Judul ?" type="text" name="judul" id="judul"
                                                 autocomplete="judul"
                                                 class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                                value="{{ $prestasi->judul ?? '' }}" required>
+                                                value="{{ $program_unggulan->judul ?? '' }}" required>
 
                                             @if ($errors->has('name'))
                                                 <p class="text-red-500 mb-3 text-small">{{ $errors->first('judul') }}</p>
@@ -60,13 +60,13 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="photo"
+                                            <label for="logo"
                                                 class="block mb-3 font-medium text-gray-700 text-md">Foto</label>
-                                            <img src="{{ url(Storage::url($prestasi->photo)) }}" alt="foto"
+                                            <img src="{{ url(Storage::url($program_unggulan->logo)) }}" alt=logo"
                                                 class="inline object-cover w-20 h-20 rounded" for="choose">
 
-                                            <input placeholder="Foto" type="file" name="photo" id="photo"
-                                                autocomplete="photo"
+                                            <input placeholder="Logo" type="file" name="logo" id="logo"
+                                                autocomplete="logo"
                                                 class="block w-full py-3 pl-5 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm">
                                         </div>
 
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="px-4 py-3 text-right sm:px-6">
 
-                                    <a href="{{ route('admin.prestasi.index') }}"
+                                    <a href="{{ route('admin.program_unggulan.index') }}"
                                         class="inline-flex justify-center px-4 py-2 mr-4 text-sm font-medium text-gray-700 bg-white border border-gray-600 rounded-lg shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
                                         onclick="return confirm('Apakah Anda yakin kembali?, Data tidak akan tersimpan.')">
                                         Cancel

@@ -24,17 +24,17 @@
                 <div class="flex-1 mt-2 flex-col">
                     <h4 class="font-medium text-white text-lg mt-4 md:mt-0 mb-4">Social Media</h4>
                     <div class="my-3">
-                        <a href="#" class="text-serv-text font-light">
+                        <a href="{{ $identitas_web->link_instagram ?? '#' }}" class="text-serv-text font-light">
                             <i class="fa-brands fa-instagram"></i> Instagram
                         </a>
                     </div>
                     <div class="my-3">
-                        <a href="#" class="text-serv-text font-light">
+                        <a href="{{ $identitas_web->link_telegram ?? '#' }}" class="text-serv-text font-light">
                             <i class="fa-brands fa-telegram"></i> Telegram
                         </a>
                     </div>
                     <div class="my-3">
-                        <a href="#" class="text-serv-text font-light">
+                        <a href="{{ $identitas_web->link_facebook ?? '#' }}" class="text-serv-text font-light">
                             <i class="fa-brands fa-facebook"></i> Facebook
                         </a>
                     </div>
