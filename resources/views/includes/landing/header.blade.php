@@ -18,7 +18,8 @@
         <div class=" mx-auto flex flex-wrap flex-row items-center justify-between mt-5">
 
             <a href="{{ route('index') }}" class="flex text-3xl font-bold items-center">
-                MTS Sainstech
+                <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
+                    class="inline object-cover w-50 h-10 rounded" for="choose">
             </a>
 
             <label for="menu-toggle" class="cursor-pointer lg:hidden block">
@@ -40,7 +41,9 @@
                     <a href="{{ route('landing.visi_misi') }}"
                         class="block {{ request()->is('visi_misi') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Visi
                         & Misi</a>
-                    <div @click.away="open = false" class="relative {{ request()->is(['kurikulum', 'prestasi', 'ekstrakurikuler', 'organisasi']) ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}" x-data="{ open: false }">
+                    <div @click.away="open = false"
+                        class="relative {{ request()->is(['kurikulum', 'prestasi', 'ekstrakurikuler', 'organisasi'])? 'nav-link active font-medium': 'nav-link text-serv-text' }}"
+                        x-data="{ open: false }">
                         <button @click="open = !open"
                             class="flex flex-row items-center w-full mt-2 text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
 

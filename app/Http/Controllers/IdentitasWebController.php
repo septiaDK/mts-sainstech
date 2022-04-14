@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\IdentitasWebModel;
 use Illuminate\Http\Request;
 
+use File;
+
 class IdentitasWebController extends Controller
 {
     /**
@@ -55,6 +57,11 @@ class IdentitasWebController extends Controller
         $new_identitas_web->link_telegram   = $request->get('link_telegram');
         $new_identitas_web->link_facebook   = $request->get('link_facebook');
 
+        $path_logo = $request->file('logo');
+        if (isset($path_logo)) {
+            $new_identitas_web->logo = $request->file('logo')->store('assets/logo', 'public');
+        }
+
         $new_identitas_web->save();
 
         toast()->success('Simpan data berhasil.');
@@ -102,6 +109,19 @@ class IdentitasWebController extends Controller
         $identitas_web->link_instagram  = $request->get('link_instagram');
         $identitas_web->link_telegram   = $request->get('link_telegram');
         $identitas_web->link_facebook   = $request->get('link_facebook');
+
+        $path_logo = $request->file('logo');
+        if (isset($path_logo)) {
+
+            $path_logo_old = 'storage/' . $identitas_web->logo;
+            if (File::exists($path_logo_old)) {
+                File::delete($path_logo_old);
+            } else {
+                File::delete('storage/app/public/' . $identitas_web->logo);
+            }
+
+            $identitas_web->logo = $request->file('logo')->store('assets/logo', 'public');
+        }
 
         $identitas_web->save();
 

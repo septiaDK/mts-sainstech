@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ProgramUnggulanModel;
 use Illuminate\Http\Request;
 
-use FIle;
-
+use File;
 class ProgramUnggulanController extends Controller
 {
     /**
@@ -38,11 +37,11 @@ class ProgramUnggulanController extends Controller
      */
     public function store(Request $request)
     {
-        $new_program_unggulan = New ProgramUnggulanModel();
+        $new_program_unggulan = new ProgramUnggulanModel();
         $new_program_unggulan->judul = $request->get('judul');
 
         $path_foto = $request->file('logo');
-        if(isset($path_foto)){
+        if (isset($path_foto)) {
             $new_program_unggulan->logo = $request->file('logo')->store('assets/program_unggulan', 'public');
         }
 
@@ -90,7 +89,15 @@ class ProgramUnggulanController extends Controller
         $program_unggulan->judul = $request->get('judul');
 
         $path_foto = $request->file('logo');
-        if(isset($path_foto)){
+        if (isset($path_foto)) {
+
+            $path_foto_old = 'storage/' . $program_unggulan->logo;
+            if (File::exists($path_foto_old)) {
+                File::delete($path_foto_old);
+            } else {
+                File::delete('storage/app/public/' . $program_unggulan->logo);
+            }
+
             $program_unggulan->logo = $request->file('logo')->store('assets/program_unggulan', 'public');
         }
 
@@ -109,13 +116,13 @@ class ProgramUnggulanController extends Controller
     public function destroy($id)
     {
         $program_unggulan = ProgramUnggulanModel::findOrFail($id);
-        
+
         // delete photo
-        $photo_path = 'storage/'. $program_unggulan->logo;
-        if(File::exists($photo_path)){
+        $photo_path = 'storage/' . $program_unggulan->logo;
+        if (File::exists($photo_path)) {
             File::delete($photo_path);
         } else {
-            File::delete('storage/app/public/'. $program_unggulan->logo);
+            File::delete('storage/app/public/' . $program_unggulan->logo);
         }
 
         $program_unggulan->delete();

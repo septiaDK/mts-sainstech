@@ -45,9 +45,10 @@
     <div class="mx-auto lg:px-16 md:px-20 px-8 py-8 ">
         <div class="mt-16 border-t border-serv-border sm:flex justify-between w-100 ">
             <div class="flex items-left mt-8">
-                <h1 class="text-white text-3xl font-bold">
-                    MTS Sainstech
-                </h1>
+                <a href="{{ route('index') }}" class="flex text-3xl font-bold items-center">
+                    <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
+                        class="inline object-cover w-50 h-10 rounded" for="choose">
+                </a>
             </div>
             <div class="sm:flex items-center justify-center mt-8 lg:ml-24">
                 <p class="text-serv-text">

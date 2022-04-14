@@ -2,15 +2,8 @@
 <aside class="z-20 flex-shrink-0 hidden w-64 overflow-y-auto bg-white md:block" aria-label="aside">
     <div class="text-serv-bg">
 
-        <div class="" href="#">
-            <img src="{{ asset('/assets/images/logo.svg') }}" alt="" class="object-center mx-auto my-8 ">
-        </div>
-
-        <div class="flex items-center pt-8 pl-5 space-x-2 border-t border-gray-100">
-            <div>
-                <!--Author name-->
-                <p class="font-semibold text-gray-900 text-md">{{ Auth::user()->name }}</p>
-            </div>
+        <div class="font-semibold text-gray-900 text-md my-8 text-center" href="#">
+            Menu Administrator
         </div>
 
         <ul class="mt-6">
@@ -33,7 +26,7 @@
         </ul>
 
         <ul>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/siswa') || request()->is('admin/siswa/*') || request()->is('admin/*/siswa') || request()->is('admin/*/siswa/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -48,18 +41,11 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Peserta Didik Baru</span>
                 </a>
             </li>
 
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/program_unggulan') || request()->is('admin/program_unggulan/*') || request()->is('admin/*/program_unggulan') || request()->is('admin/*/program_unggulan/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -67,25 +53,18 @@
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                    href="{{ route('admin.tenaga_pendidik.index') }}">
+                    href="{{ route('admin.program_unggulan.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Program Unggulan</span>
                 </a>
             </li>
 
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/tenaga_pendidik') || request()->is('admin/tenaga_pendidik/*') || request()->is('admin/*/tenaga_pendidik') || request()->is('admin/*/tenaga_pendidik/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -100,18 +79,11 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Tenaga Pendidik</span>
                 </a>
             </li>
 
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/prestasi') || request()->is('admin/prestasi/*') || request()->is('admin/*/prestasi') || request()->is('admin/*/prestasi/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -126,18 +98,11 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Prestasi</span>
                 </a>
             </li>
 
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/visi_misi') || request()->is('admin/visi_misi/*') || request()->is('admin/*/visi_misi') || request()->is('admin/*/visi_misi/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -152,17 +117,10 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Visi Misi</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/kurikulum') || request()->is('admin/kurikulum/*') || request()->is('admin/*/kurikulum') || request()->is('admin/*/kurikulum/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -177,17 +135,10 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Kurikulum</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3">
+            <li class="relative px-6 py-2">
 
                 @if (request()->is('admin/identitas_web') || request()->is('admin/identitas_web/*') || request()->is('admin/*/identitas_web') || request()->is('admin/*/identitas_web/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
@@ -202,13 +153,6 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                     </svg>
-                    <!-- Active Icons -->
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
-                    </svg> -->
                     <span class="ml-4">Identitas Web</span>
                 </a>
             </li>

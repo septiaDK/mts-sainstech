@@ -30,6 +30,22 @@
                                 <div class="px-4 py-5 sm:p-6">
                                     <div class="grid grid-cols-6 gap-6">
 
+                                        <div class="col-span-6">
+                                            <label for="logo"
+                                                class="block mb-3 font-medium text-gray-700 text-md">Logo</label>
+                                            @if (isset($identitas_web->logo))
+                                                <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
+                                                    class="inline object-cover w-50 h-10 rounded" for="choose">
+                                            @endif
+
+                                            <input placeholder="Logo" type="file" name="logo" id="logo" autocomplete="logo"
+                                                class="block w-full py-3 pl-5 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                                        </div>
+                                        @if ($errors->has('logo'))
+                                            <p class="text-red-500 mb-3 text-small">{{ $errors->first('logo') }}
+                                            </p>
+                                        @endif
+
                                         <div class="md:col-span-6 lg:col-span-3">
                                             <label for="no_telpon" class="block mb-3 font-medium text-gray-700 text-md">No.
                                                 Telpon</label>
@@ -70,40 +86,46 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="link_instagram" class="block mb-3 font-medium text-gray-700 text-md">URL Instagram</label>
+                                            <label for="link_instagram"
+                                                class="block mb-3 font-medium text-gray-700 text-md">URL Instagram</label>
                                             <input placeholder="" type="text" name="link_instagram" id="link_instagram"
                                                 autocomplete="link_instagram"
                                                 class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                 value="{{ $identitas_web->link_instagram ?? '' }}">
 
                                             @if ($errors->has('link_instagram'))
-                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('link_instagram') }}
+                                                <p class="text-red-500 mb-3 text-small">
+                                                    {{ $errors->first('link_instagram') }}
                                                 </p>
                                             @endif
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="link_telegram" class="block mb-3 font-medium text-gray-700 text-md">URL Telegram</label>
+                                            <label for="link_telegram"
+                                                class="block mb-3 font-medium text-gray-700 text-md">URL Telegram</label>
                                             <input placeholder="" type="text" name="link_telegram" id="link_telegram"
                                                 autocomplete="link_telegram"
                                                 class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                 value="{{ $identitas_web->link_telegram ?? '' }}">
 
                                             @if ($errors->has('link_telegram'))
-                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('link_telegram') }}
+                                                <p class="text-red-500 mb-3 text-small">
+                                                    {{ $errors->first('link_telegram') }}
                                                 </p>
                                             @endif
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="link_facebook" class="block mb-3 font-medium text-gray-700 text-md">URL Facebook</label>
+                                            <label for="link_facebook"
+                                                class="block mb-3 font-medium text-gray-700 text-md">URL Facebook</label>
                                             <input placeholder="" type="text" name="link_facebook" id="link_facebook"
                                                 autocomplete="link_facebook"
                                                 class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                 value="{{ $identitas_web->link_facebook ?? '' }}">
 
                                             @if ($errors->has('link_facebook'))
-                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('link_facebook') }}
+                                                <p class="text-red-500 mb-3 text-small">
+                                                    {{ $errors->first('link_facebook') }}
                                                 </p>
                                             @endif
                                         </div>
@@ -117,7 +139,8 @@
                                                 value="{{ $identitas_web->path_video ?? '' }}" required>
 
                                             @if ($errors->has('path_video'))
-                                                <p class="text-red-500 mb-3 text-small">{{ $errors->first('path_video') }}
+                                                <p class="text-red-500 mb-3 text-small">
+                                                    {{ $errors->first('path_video') }}
                                                 </p>
                                             @endif
                                         </div>
