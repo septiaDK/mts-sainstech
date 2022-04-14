@@ -162,6 +162,8 @@ class LandingController extends Controller
     // notifikasi berhasil daftar siswa
     public function success_daftar_siswa()
     {
-        return view('pages.landing.success_daftar');
+        $identitas_web = IdentitasWebModel::limit(1)->first();
+
+        return view('pages.landing.success_daftar', compact('identitas_web'));
     }
 }

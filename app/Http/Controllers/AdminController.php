@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\SiswaModel;
 use Illuminate\Http\Request;
+use App\Models\TenagaPendidikModel;
 
 class AdminController extends Controller
 {
@@ -13,7 +16,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard.index');
+        $jmlh_siswa = SiswaModel::count();
+        $jmlh_tenaga_pendidik = TenagaPendidikModel::count();
+
+        $calon_siswa_today = SiswaModel::whereDate('created_at', Carbon::today())->get();
+
+        return view('pages.dashboard.index', compact('jmlh_siswa', 'jmlh_tenaga_pendidik', 'calon_siswa_today'));
     }
 
     /**

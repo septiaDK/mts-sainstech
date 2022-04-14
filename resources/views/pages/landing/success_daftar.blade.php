@@ -69,7 +69,7 @@
         <p class="leading-8 text-serv-text mb-6">
             jika terdapat pertanyaan lebih lanjut, bisa dilanjutkan melalui klik tombol dibawah ini
         </p>
-        <a href="http://wa.me/628123456789" class="bg-serv-button text-white text-md font-medium py-4 w-80 my-2 rounded-2xl text-center inline-block">
+        <a href="http://wa.me/{{ $identitas_web->no_telpon ?? '' }}" class="bg-serv-button text-white text-md font-medium py-4 w-80 my-2 rounded-2xl text-center inline-block">
             Lanjut ke Chat
         </a>
         <br>
