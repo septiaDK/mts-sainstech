@@ -140,14 +140,27 @@ class LandingController extends Controller
     public function store_daftar(Request $request)
     {
         $new_siswa = new SiswaModel;
-        $new_siswa->name          = strtoupper($request->get('name'));
-        $new_siswa->nisn          = $request->get('nisn');
-        $new_siswa->nik           = $request->get('nik');
-        $new_siswa->tempat_lahir  = strtoupper($request->get('tempat_lahir'));
-        $new_siswa->tanggal_lahir = date('Y-m-d', strtotime($request->get('tanggal_lahir')));
-        $new_siswa->jenis_kelamin = $request->get('jenis_kelamin');
-        $new_siswa->alamat        = strtoupper($request->get('alamat_lengkap'));
-        $new_siswa->no_telpon     = $request->get('no_telpon');
+        $new_siswa->name                     = strtoupper($request->get('name'));
+        $new_siswa->nisn                     = $request->get('nisn');
+        $new_siswa->nik                      = $request->get('nik');
+        $new_siswa->tempat_lahir             = strtoupper($request->get('tempat_lahir'));
+        $new_siswa->tanggal_lahir            = date('Y-m-d', strtotime($request->get('tanggal_lahir')));
+        $new_siswa->jenis_kelamin            = $request->get('jenis_kelamin');
+        $new_siswa->alamat                   = strtoupper($request->get('alamat_lengkap'));
+        $new_siswa->no_telpon                = $request->get('no_telpon');
+        $new_siswa->asal_sekolah             = $request->get('asal_sekolah');
+        $new_siswa->nama_ayah                = $request->get('nama_ayah');
+        $new_siswa->pekerjaan_ayah           = $request->get('pekerjaan_ayah');
+        $new_siswa->pendidikan_terakhir_ayah = $request->get('pendidikan_terakhir_ayah');
+        $new_siswa->nama_ibu                 = $request->get('nama_ibu');
+        $new_siswa->pekerjaan_ibu            = $request->get('pekerjaan_ibu');
+        $new_siswa->pendidikan_terakhir_ibu  = $request->get('pendidikan_terakhir_ibu');
+        $new_siswa->penghasilan_ortu         = $request->get('penghasilan_ortu');
+        $new_siswa->status_ortu              = $request->get('status_ortu');
+        $new_siswa->nama_wali                = $request->get('nama_wali');
+        $new_siswa->pekerjaan_wali           = $request->get('pekerjaan_wali');
+        $new_siswa->hubungan_wali            = $request->get('hubungan_wali');
+        $new_siswa->status_verifikasi        = "PENDING";
 
         $photo = $request->file('photo');
         if(isset($photo)){

@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $jmlh_siswa = SiswaModel::count();
+        $jmlh_siswa = SiswaModel::where('status_verifikasi', 'SELESAI')->count();
         $jmlh_tenaga_pendidik = TenagaPendidikModel::count();
 
         $calon_siswa_today = SiswaModel::whereDate('created_at', Carbon::today())->get();

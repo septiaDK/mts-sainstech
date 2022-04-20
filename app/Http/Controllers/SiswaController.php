@@ -75,7 +75,9 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        return abort(404);
+        $siswa = SiswaModel::findOrFail($id);
+        $nama_button = 'Update';
+        return view('pages.dashboard.siswa.edit', compact('siswa', 'nama_button'));
     }
 
     /**
@@ -86,7 +88,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $siswa = SiswaModel::findOrFail($id);
+        $nama_button = 'Verifikasi';
+        return view('pages.dashboard.siswa.edit', compact('siswa', 'nama_button'));
     }
 
     /**
@@ -98,7 +102,39 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $siswa = SiswaModel::findOrFail($id);
+
+        $siswa->name                     = strtoupper($request->get('name'));
+        $siswa->nisn                     = $request->get('nisn');
+        $siswa->nik                      = $request->get('nik');
+        $siswa->tempat_lahir             = strtoupper($request->get('tempat_lahir'));
+        $siswa->tanggal_lahir            = date('Y-m-d', strtotime($request->get('tanggal_lahir')));
+        $siswa->jenis_kelamin            = $request->get('jenis_kelamin');
+        $siswa->alamat                   = strtoupper($request->get('alamat_lengkap'));
+        $siswa->no_telpon                = $request->get('no_telpon');
+        $siswa->asal_sekolah             = $request->get('asal_sekolah');
+        $siswa->nama_ayah                = $request->get('nama_ayah');
+        $siswa->pekerjaan_ayah           = $request->get('pekerjaan_ayah');
+        $siswa->pendidikan_terakhir_ayah = $request->get('pendidikan_terakhir_ayah');
+        $siswa->nama_ibu                 = $request->get('nama_ibu');
+        $siswa->pekerjaan_ibu            = $request->get('pekerjaan_ibu');
+        $siswa->pendidikan_terakhir_ibu  = $request->get('pendidikan_terakhir_ibu');
+        $siswa->penghasilan_ortu         = $request->get('penghasilan_ortu');
+        $siswa->status_ortu              = $request->get('status_ortu');
+        $siswa->nama_wali                = $request->get('nama_wali');
+        $siswa->pekerjaan_wali           = $request->get('pekerjaan_wali');
+        $siswa->hubungan_wali            = $request->get('hubungan_wali');
+        $siswa->status_verifikasi        = "SELESAI";
+
+        $path_foto = $request->file('photo');
+        if(isset($path_foto)){
+            $siswa->photo = $request->file('photo')->store('assets/siswa', 'public');
+        }
+
+        $siswa->save();
+
+        toast()->success("Verifikasi data berhasil");
+        return redirect()->route('admin.siswa.index');
     }
 
     /**

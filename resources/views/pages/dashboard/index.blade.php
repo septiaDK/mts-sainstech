@@ -68,6 +68,7 @@
                                     <th class="py-4" scope="">Jenis Kelamin</th>
                                     <th class="py-4" scope="">Alamat</th>
                                     <th class="py-4" scope="">No. Telfon</th>
+                                    <th class="py-4" scope="">Status Verifikasi</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white">
@@ -87,6 +88,13 @@
                                         </td>
                                         <td class="px-1 py-5">
                                             {{ $item->no_telpon ?? '' }}
+                                        </td>
+                                        <td class="px-1 py-5">
+                                            @if ($item->status_verifikasi == 'PENDING')
+                                                <p class="text-red-500">{{ $item->status_verifikasi }}</p>
+                                                @else
+                                                <p class="text-green-500">{{ $item->status_verifikasi }}</p>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty

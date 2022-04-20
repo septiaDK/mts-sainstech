@@ -67,6 +67,10 @@
                                         </td>
                                         <td class="px-1 py-5 text-sm">
                                             {{ $item->name ?? '' }}
+                                            <div
+                                                class="mt-5 {{ $item->status_verifikasi == 'SELESAI' ? 'text-green-500' : 'text-red-500' }}">
+                                                <p>Status Verifikasi : {{ $item->status_verifikasi ?? '' }}</p>
+                                            </div>
                                         </td>
                                         <td class="px-1 py-5 text-sm">
                                             {{ $item->nisn ?? '' }}
@@ -81,18 +85,25 @@
                                             {{ $item->no_telpon ?? '' }}
                                         </td>
                                         <td class="w-2/6 px-1 py-5 text-sm text-center">
-                                            <a href="{{ route('admin.siswa.edit', $item->id) }}"
-                                                class="px-4 py-2 mt-1 mr-2 text-center text-white rounded-xl bg-serv-button">Verifikasi</a>
 
-                                            <a href="{{ route('admin.siswa.destroy', $item->id) }}"
-                                                class="px-4 py-2 mt-2 text-center text-white rounded-xl bg-red-400"
-                                                onclick="event.preventDefault(); document.getElementById('delete-form{{ $item->id }}').submit();">Delete</a>
+                                            @if ($item->status_verifikasi == 'SELESAI')
+                                                <a href="{{ route('admin.siswa.show', $item->id) }}"
+                                                class="px-4 py-2 mt-1 mr-2 text-center text-white rounded-xl bg-serv-bg">Lihat Detail</a>
+                                            @else
+                                                <a href="{{ route('admin.siswa.edit', $item->id) }}"
+                                                    class="px-4 py-2 mt-1 mr-2 text-center text-white rounded-xl bg-serv-button">Verifikasi</a>
 
-                                            <form action="{{ route('admin.siswa.destroy', $item->id) }}"
-                                                id="delete-form{{ $item->id }}" method="POST" style="display: none;">
-                                                @csrf
-                                                @method("DELETE")
-                                            </form>
+                                                <a href="{{ route('admin.siswa.destroy', $item->id) }}"
+                                                    class="px-4 py-2 mt-2 text-center text-white rounded-xl bg-red-400"
+                                                    onclick="event.preventDefault(); document.getElementById('delete-form{{ $item->id }}').submit();">Delete</a>
+
+                                                <form action="{{ route('admin.siswa.destroy', $item->id) }}"
+                                                    id="delete-form{{ $item->id }}" method="POST"
+                                                    style="display: none;">
+                                                    @csrf
+                                                    @method("DELETE")
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty
