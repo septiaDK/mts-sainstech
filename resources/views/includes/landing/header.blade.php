@@ -18,8 +18,10 @@
         <div class=" mx-auto flex flex-wrap flex-row items-center justify-between mt-5">
 
             <a href="{{ route('index') }}" class="flex text-3xl font-bold items-center">
-                <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
-                    class="inline object-cover w-50 h-10 rounded" for="choose">
+                @if (isset($identitas_web->logo))
+                    <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
+                        class="inline object-cover w-50 h-10 rounded" for="choose">
+                @endif
             </a>
 
             <label for="menu-toggle" class="cursor-pointer lg:hidden block">

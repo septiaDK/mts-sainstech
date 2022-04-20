@@ -46,13 +46,15 @@
         <div class="mt-16 border-t border-serv-border sm:flex justify-between w-100 ">
             <div class="flex items-left mt-8">
                 <a href="{{ route('index') }}" class="flex text-3xl font-bold items-center">
-                    <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
-                        class="inline object-cover w-50 h-10 rounded" for="choose">
+                    @if (isset($identitas_web->logo))
+                        <img src="{{ url(Storage::url($identitas_web->logo)) }}" alt=logo"
+                            class="inline object-cover w-50 h-10 rounded" for="choose">
+                    @endif
                 </a>
             </div>
             <div class="sm:flex items-center justify-center mt-8 lg:ml-24">
                 <p class="text-serv-text">
-                    &copy; 2022 Serv All rights reserved.
+                    &copy; 2022 All rights reserved.
                 </p>
             </div>
         </div>

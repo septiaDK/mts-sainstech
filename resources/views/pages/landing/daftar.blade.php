@@ -43,7 +43,7 @@
                                                     <input placeholder="NISN Sesuai Ijazah?" type="text" name="nisn"
                                                         id="nisn" autocomplete="nisn"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                                        value="" required>
+                                                        value="">
                                                 </div>
 
                                                 <div class="col-span-6">
@@ -54,7 +54,7 @@
                                                     <input placeholder="NIK Calon Peserta Didik Baru?" type="text"
                                                         name="nik" id="nik" autocomplete="nik"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                                        value="" required>
+                                                        value="">
                                                 </div>
 
                                                 <div class="col-span-6">
@@ -114,6 +114,16 @@
                                                 </div>
 
                                                 <div class="col-span-6">
+                                                    <label for="asal_sekolah"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Asal Sekolah</label>
+
+                                                    <input placeholder="Asal Sekolah Sebelumnya?" type="text"
+                                                        name="asal_sekolah" id="asal_sekolah" autocomplete="asal_sekolah"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
                                                     <label for="no_telpon"
                                                         class="block mb-3 font-medium text-gray-700 text-md">No Telphone / Whatsapp</label>
 
@@ -121,6 +131,151 @@
                                                         name="no_telpon" id="no_telpon" autocomplete="no_telpon"
                                                         class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                                         value="" required>
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="nama_ayah"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Nama Ayah</label>
+
+                                                    <input placeholder="Nama Ayah?" type="text"
+                                                        name="nama_ayah" id="nama_ayah" autocomplete="nama_ayah"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="pekerjaan_ayah"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Pekerjaan Ayah</label>
+
+                                                    <input placeholder="Pekerjaan Ayah?" type="text"
+                                                        name="pekerjaan_ayah" id="pekerjaan_ayah" autocomplete="pekerjaan_ayah"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="pendidikan_terakhir_ayah"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Pendidikan Terakhir Ayah</label>
+
+                                                    <input placeholder="Pendidikan Terakhir Ayah?" type="text"
+                                                        name="pendidikan_terakhir_ayah" id="pendidikan_terakhir_ayah" autocomplete="pendidikan_terakhir_ayah"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="nama_ibu"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Nama Ibu</label>
+
+                                                    <input placeholder="Nama Ibu?" type="text"
+                                                        name="nama_ibu" id="nama_ibu" autocomplete="nama_ibu"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="pekerjaan_ibu"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Pekerjaan Ibu</label>
+
+                                                    <input placeholder="Pekerjaan Ibu?" type="text"
+                                                        name="pekerjaan_ibu" id="pekerjaan_ibu" autocomplete="pekerjaan_ibu"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="pendidikan_terakhir_ibu"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Pendidikan Terakhir Ibu</label>
+
+                                                    <input placeholder="Pendidikan Terakhir Ibu?" type="text"
+                                                        name="pendidikan_terakhir_ibu" id="pendidikan_terakhir_ibu" autocomplete="pendidikan_terakhir_ibu"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="penghasilan_ortu"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Rata - Rata Penghasilan Orang Tua</label>
+
+                                                    <div class="form-check">
+                                                        <input
+                                                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                            type="radio" name="penghasilan_ortu" id="penghasilan_1" value="0 Sampai 500.000">
+                                                        <label class="form-check-label inline-block text-gray-800"
+                                                            for="penghasilan_1">
+                                                            0 Sampai 500.000
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input
+                                                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                            type="radio" name="penghasilan_ortu" id="penghasilan_2" value="500.000 Sampai 1.000.000">
+                                                        <label class="form-check-label inline-block text-gray-800"
+                                                            for="penghasilan_2">
+                                                            500.000 Sampai 1.000.000
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input
+                                                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                            type="radio" name="penghasilan_ortu" id="penghasilan_3" value="1.000.000 Sampai 2.000.000">
+                                                        <label class="form-check-label inline-block text-gray-800"
+                                                            for="penghasilan_3">
+                                                            1.000.000 Sampai 2.000.000
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input
+                                                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                            type="radio" name="penghasilan_ortu" id="penghasilan_4" value="Di Atas 2.000.000">
+                                                        <label class="form-check-label inline-block text-gray-800"
+                                                            for="penghasilan_4">
+                                                            Di Atas 2.000.000
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="status_ortu"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Status Orang Tua Calon Peserta Didik Baru</label>
+
+                                                    <input placeholder="Status Orang Tua Calon Peserta Didik Baru?" type="text"
+                                                        name="status_ortu" id="status_ortu" autocomplete="status_ortu"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="nama_wali"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Nama Wali</label>
+                                                        <p class="text-red-500">* (Bisa Di Isi Jika (Calon Peserta Didik Baru) Ikut Dengan Wali/ Saudara)</p>
+
+                                                    <input placeholder="" type="text"
+                                                        name="nama_wali" id="nama_wali" autocomplete="nama_wali"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="pekerjaan_wali"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Pekerjaan Wali</label>
+                                                        <p class="text-red-500">* (Bisa Di Isi Jika (Calon Peserta Didik Baru) Ikut Dengan Wali/ Saudara)</p>
+
+                                                    <input placeholder="" type="text"
+                                                        name="pekerjaan_wali" id="pekerjaan_wali" autocomplete="pekerjaan_wali"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
+                                                </div>
+
+                                                <div class="col-span-6">
+                                                    <label for="hubungan_wali"
+                                                        class="block mb-3 font-medium text-gray-700 text-md">Hubungan Wali Dengan Calon Peserta Didik Baru</label>
+                                                        <p class="text-red-500">* (Bisa Di Isi Jika (Calon Peserta Didik Baru) Ikut Dengan Wali/ Saudara)</p>
+
+                                                    <input placeholder="" type="text"
+                                                        name="hubungan_wali" id="hubungan_wali" autocomplete="hubungan_wali"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="">
                                                 </div>
 
                                                 <div class="col-span-6">
